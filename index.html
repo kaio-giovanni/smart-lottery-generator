@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Loterias Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Loterias Pro</h1>
+            <p class="subtitle">Selecione o jogo e marque os números no volante</p>
+        </header>
+
+        <!-- Lottery Game Selection -->
+        <section class="modality-container">
+            <label for="gameType">Escolha a Modalidade:</label>
+            <select id="gameType" class="main-selector">
+                <option value="lotofacil" selected>Lotofácil</option>
+                <option value="megasena">Mega-Sena</option>
+            </select>
+        </section>
+
+        <!-- Interactive Betting Board -->
+        <section class="board-container">
+            <div class="legend">
+                <span class="legend-item"><span class="square neutral"></span> Normal</span>
+                <span class="legend-item"><span class="square fixed"></span> Fixar</span>
+                <span class="legend-item"><span class="square excluded"></span> Bloquear</span>
+            </div>
+            <div id="board" class="board-grid">
+                <!-- Injected dynamically by script.js -->
+            </div>
+        </section>
+
+        <!-- Game Configurations -->
+        <section class="config-container">
+            <div class="form-group">
+                <label for="numbersPerGame">Dezenas por jogo:</label>
+                <select id="numbersPerGame">
+                    <!-- Options injected dynamically by script.js -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gameMode">Filtro Estatístico Avançado:</label>
+                <select id="gameMode">
+                    <option value="0">Sequência Randômica Normal (Sem Filtros)</option>
+                    <option value="1">Equilíbrio de Pares e Ímpares</option>
+                    <option value="2">Priorizar Bordas do Volante</option>
+                    <option value="3">Sequências Curtas e Saltos</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gameQuantity">Quantidade de jogos a gerar:</label>
+                <input type="number" id="gameQuantity" value="4" min="1" max="100">
+            </div>
+
+            <button id="btnGenerate" class="btn-main">Gerar Combinações</button>
+        </section>
+
+        <!-- Results Panel -->
+        <section id="resultsPanel" class="results-container" style="display: none;">
+            <h3>Jogos Gerados com Sucesso</h3>
+            <div id="gamesList" class="games-list"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
