@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #7b1fa2;
+    --primary-hover: #6a1b9a;
+    --bg-color: #f5f6fa;
+    --card-bg: #ffffff;
+    --text-color: #2f3640;
+    
+    /* State colors for numbers */
+    --color-neutral: #f1f2f6;
+    --color-neutral-text: #2f3640;
+    --color-fixed: #2ecc71;
+    --color-fixed-text: #ffffff;
+    --color-excluded: #e74c3c;
+    --color-excluded-text: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.modality-container {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+}
+
+.main-selector {
+    font-weight: bold;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: #57606f;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.square {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.square.neutral { background-color: #dcdde1; }
+.square.fixed { background-color: var(--color-fixed); }
+.square.excluded { background-color: var(--color-excluded); }
+
+/* Dynamic Board */
+.board-grid {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Dynamic grid layout injected via JS */
+.grid-lotofacil { grid-template-columns: repeat(5, 1fr); }
+.grid-megasena { grid-template-columns: repeat(10, 1fr); }
+
+.number-ball {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    padding: 0;
+}
+
+.grid-megasena .number-ball {
+    font-size: 0.85rem;
+}
+
+/* Board States */
+.number-ball.state-0 { background-color: var(--color-neutral); color: var(--color-neutral-text); }
+.number-ball.state-0:hover { background-color: #dcdde1; }
+.number-ball.state-1 { background-color: var(--color-fixed); color: var(--color-fixed-text); transform: scale(1.05); box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3); }
+.number-ball.state-2 { background-color: var(--color-excluded); color: var(--color-excluded-text); transform: scale(0.95); }
+
+/* Configuration Form */
+.form-group { margin-bottom: 18px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+select, input { width: 100%; padding: 12px; border: 1.5px solid #dcdde1; border-radius: 8px; font-size: 1rem; color: var(--text-color); background-color: #fff; outline: none; box-sizing: border-box; }
+select:focus, input:focus { border-color: var(--primary-color); }
+
+.btn-main { width: 100%; padding: 14px; background-color: var(--primary-color); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.2s ease; }
+.btn-main:hover { background-color: var(--primary-hover); }
+
+/* Results */
+.results-container { margin-top: 25px; border-top: 2px dashed #dcdde1; padding-top: 20px; }
+.results-container h3 { margin: 0 0 15px 0; color: var(--primary-color); }
+.games-list { display: flex; flex-direction: column; gap: 8px; }
+.game-line { background: #f8f9fa; padding: 10px 14px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 1.05rem; font-weight: bold; letter-spacing: 1px; border-left: 4px solid var(--primary-color); }
