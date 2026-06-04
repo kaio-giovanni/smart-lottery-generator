@@ -30,3 +30,10 @@ Live Demo: [https://kaio-giovanni.github.io/smart-lottery-generator](https://kai
 ├── index.html     # Application layout and semantic structure
 ├── style.css      # Responsive styles and layout transitions
 └── script.js      # Combinatorics engine and state management
+```
+
+## Author
+
+| ![user](https://avatars1.githubusercontent.com/u/64810260?v=4&s=150) |
+| ----------------------------- |
+| <p align="center"> <a href="https://github.com/kaio-giovanni"> @kaio-giovanni </a> </p>|
